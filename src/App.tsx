@@ -441,14 +441,16 @@ function GoalSelectionScreen({ onNavigate, updateData, data, onHelp }: any) {
           ))}
         </div>
 
-        <HelpLink onClick={onHelp} />
-        <Button 
-          disabled={!data.goal} 
-          onClick={() => onNavigate('PROFILE_QUESTIONS')}
-          accessible={data.accessibleMode}
-        >
-          Continuar
-        </Button>
+        <div className="mt-auto space-y-4 w-full">
+          <Button 
+            disabled={!data.goal} 
+            onClick={() => onNavigate('PROFILE_QUESTIONS')}
+            accessible={data.accessibleMode}
+          >
+            Continuar
+          </Button>
+          <HelpLink onClick={onHelp} />
+        </div>
       </ContentWrapper>
     </>
   );
@@ -492,13 +494,16 @@ function ProfileQuestionsScreen({ onNavigate, updateData, data, onHelp, onShowIn
           </button>
         </div>
 
-        <Button 
-          disabled={!data.timeframe || !data.risk} 
-          onClick={() => onNavigate('RECOMMENDATIONS')}
-          accessible={data.accessibleMode}
-        >
-          Ver opções recomendadas
-        </Button>
+        <div className="mt-auto space-y-4 w-full">
+          <Button 
+            disabled={!data.timeframe || !data.risk} 
+            onClick={() => onNavigate('RECOMMENDATIONS')}
+            accessible={data.accessibleMode}
+          >
+            Ver opções recomendadas
+          </Button>
+          <HelpLink onClick={onHelp} />
+        </div>
       </ContentWrapper>
     </>
   );
@@ -591,6 +596,7 @@ function RecommendationsScreen({ onNavigate, updateData, data, onHelp, onShowInf
             </div>
           ))}
         </div>
+        <HelpLink onClick={onHelp} />
       </ContentWrapper>
     </>
   );
@@ -712,6 +718,7 @@ function InsertValueScreen({ onNavigate, updateData, data, onHelp }: any) {
         <div className="mt-8 space-y-4">
           <Button disabled={!hasValue} onClick={() => onNavigate('REVIEW')} accessible={data.accessibleMode}>Continuar</Button>
           <Button variant="outline" onClick={() => setInputValue('')} accessible={data.accessibleMode}>Limpar valor</Button>
+          <HelpLink onClick={onHelp} />
         </div>
       </ContentWrapper>
     </>
