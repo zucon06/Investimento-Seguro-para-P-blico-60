@@ -135,7 +135,7 @@ export function ProgressBar({ current, total }: { current: number; total: number
 }
 
 // --- Help Section / Button inline ---
-export function HelpLink({ onClick, text = "Preciso de ajuda" }: { onClick: () => void; text?: string }) {
+export function HelpLink({ onClick, text = "Falar com atendente" }: { onClick: () => void; text?: string }) {
   return (
     <button onClick={onClick} className="flex items-center justify-center gap-2 text-primary font-medium w-full py-4 hover:bg-slate-50 rounded-xl transition-colors">
       <HelpCircle className="w-5 h-5" />

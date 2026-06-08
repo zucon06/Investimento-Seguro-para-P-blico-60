@@ -74,7 +74,7 @@ export default function App() {
   };
 
   return (
-    <PageWrapper className={data.accessibleMode ? 'text-lg' : ''}>
+    <PageWrapper className={data.accessibleMode ? 'accessible-mode' : ''}>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentScreen}
@@ -768,7 +768,7 @@ function ReviewScreen({ onNavigate, data, onHelp }: any) {
         <div className="mt-auto space-y-4">
           <Button variant="secondary" onClick={() => onNavigate('AUTHENTICATION')} accessible={data.accessibleMode}>Confirmar com segurança</Button>
           <Button variant="outline" onClick={() => onNavigate('INSERT_VALUE')} accessible={data.accessibleMode}>Voltar e alterar dados</Button>
-          <HelpLink onClick={onHelp} text="Preciso de ajuda agora" />
+          <HelpLink onClick={onHelp} text="Falar com atendente" />
         </div>
       </ContentWrapper>
     </>
